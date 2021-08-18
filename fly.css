@@ -1,0 +1,60 @@
+:root {
+  --map-size: 50px;
+}
+* {
+	padding: 0px;
+	margin: 0px;
+}
+.description {
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	font-family: Tahoma, Verdana,Arial, sans-serif;
+	font-size: 10px;
+	width: 200px;
+	background: rgba(228,228,255,0.5);
+	padding: 10px;
+	margin: 0px auto 10px auto;
+	z-index: 1000;
+}
+.description span {
+	font-weight: bold;
+	font-size: 120%;
+	color: red;
+}
+#map {
+    position: relative;
+    margin: 10px auto;
+	width: var(--map-size);
+	height: var(--map-size);
+	overflow: hidden;
+	border: 8px solid silver;
+	border-radius: 50%;
+	box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5), inset 5px 5px 5px 0px rgba(0,0,0,0.5);
+	background: url(images/map.png);
+}
+#map:before {
+	content: "";
+	position: absolute;
+	top: -5px;
+	left: calc(var(--map-size) / 2 - 1px);
+	width: 0px;
+	height: calc(var(--map-size) + 10px);
+	border: 1px outset silver;
+	z-index: 10;
+}
+#map:after {
+	content: "";
+	position: absolute;
+	top: calc(var(--map-size) / 2 - 1px);
+	left: -5px;
+	width: calc(var(--map-size) + 10px);
+	height: 0px;
+	border: 1px outset silver;
+	z-index: 10;
+}
+#airplan {
+    position: absolute;
+	background: url(images/airplan.png) no-repeat;
+	background-size: cover;
+}
